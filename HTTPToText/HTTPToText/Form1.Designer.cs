@@ -47,14 +47,29 @@
             this.button_timer.TabIndex = 0;
             this.button_timer.Text = "Start";
             this.button_timer.UseVisualStyleBackColor = true;
-            this.button_timer.Click += new System.EventHandler(this.button1_Click);
+            this.button_timer.Click += new System.EventHandler(this.button_timer_Click);
             // 
             // numericUpDown1
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(62, 42);
+            this.numericUpDown1.Location = new System.Drawing.Point(76, 42);
+            this.numericUpDown1.Maximum = new decimal(new int[] {
+            360,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(120, 20);
+            this.numericUpDown1.Size = new System.Drawing.Size(106, 20);
             this.numericUpDown1.TabIndex = 1;
+            this.numericUpDown1.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
             // 
             // button_file
             // 
@@ -96,9 +111,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(12, 44);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 13);
+            this.label1.Size = new System.Drawing.Size(58, 13);
             this.label1.TabIndex = 6;
-            this.label1.Text = "Refresh";
+            this.label1.Text = "Refresh (s)";
             // 
             // Form1
             // 
