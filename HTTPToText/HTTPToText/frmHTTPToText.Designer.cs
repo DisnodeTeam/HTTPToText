@@ -1,6 +1,6 @@
 ﻿namespace HTTPToText
 {
-    partial class Form1
+    partial class frmHTTPToText
     {
         /// <summary>
         /// Required designer variable.
@@ -120,7 +120,7 @@
             this.label1.TabIndex = 6;
             this.label1.Text = "Refresh (s)";
             // 
-            // frmHTTPToText
+            // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -132,7 +132,7 @@
             this.Controls.Add(this.button_file);
             this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.button_timer);
-            this.Name = "frmHTTPToText";
+            this.Name = "Form1";
             this.Text = "HTTP To Text";
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);

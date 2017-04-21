@@ -8,10 +8,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-<<<<<<< HEAD:HTTPToText/HTTPToText/Form1.cs
+
 namespace HTTPToText
 {
-    public partial class Form1 : Form
+    public partial class frmHTTPToText : Form
     {
         private Timer timer;
         private bool Running = false;
@@ -32,7 +32,7 @@ namespace HTTPToText
             timer = null;
         }
 
-        public Form1()
+        public frmHTTPToText()
         {
             InitializeComponent();
         }
@@ -51,10 +51,6 @@ namespace HTTPToText
         }
         
 
-        private void button_file_Click(object sender, EventArgs e)
-        {
-            saveFileDialog1.ShowDialog();
-        }
 
         private void button_timer_Click(object sender, EventArgs e)
         {
@@ -69,7 +65,16 @@ namespace HTTPToText
             Running = !Running;
             UpdateRunning();
         }
+        private void button_file_Click(object sender, EventArgs e)
+        {
+            sfd.ShowDialog();
+        }
 
+        private void sfd_FileOk(object sender, CancelEventArgs e)
+        {
+            lblPath.Text = sfd.FileName;
+
+        }
         private void UpdateRunning()
         {
             Console.WriteLine("Updating Run State: " + Running);
@@ -83,27 +88,14 @@ namespace HTTPToText
             }
             else
             {
-                if(timer != null)
+                if (timer != null)
                 {
                     ClearTimer();
                 }
 
                 button_timer.Text = "Start";
             }
-=======
-namespace HTTPToText {
-    public partial class frmHTTPToText : Form {
-        public frmHTTPToText() {
-            InitializeComponent();
         }
 
-        private void button_file_Click(object sender, EventArgs e) {
-            sfd.ShowDialog();
-        }
-
-        private void sfd_FileOk(object sender, CancelEventArgs e) {
-            lblPath.Text = sfd.FileName;
->>>>>>> master:HTTPToText/HTTPToText/frmHTTPToText.cs
-        }
     }
 }
