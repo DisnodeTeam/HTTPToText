@@ -15,6 +15,7 @@ namespace HTTPToText
     {
         private Timer timer;
         private bool Running = false;
+        private string Path = "";
         public void InitTimer()
         {
             
@@ -35,6 +36,12 @@ namespace HTTPToText
         public frmHTTPToText()
         {
             InitializeComponent();
+            numericUpDown1.Value = Properties.Settings.Default.Timer;
+            Path = Properties.Settings.Default.FilePath;
+            Console.WriteLine(Properties.Settings.Default.FilePath);
+            textBox_url.Text = Properties.Settings.Default.URL;
+            lblPath.Text = Path;
+
         }
         private void timer_tick(object sender, EventArgs e)
         {
@@ -73,7 +80,19 @@ namespace HTTPToText
         private void sfd_FileOk(object sender, CancelEventArgs e)
         {
             lblPath.Text = sfd.FileName;
-
+            Path = sfd.FileName;
+            Properties.Settings.Default.FilePath = Path;
+            Properties.Settings.Default.Save();
+            UpdateSettings();
+        }
+        private void UpdateSettings()
+        {
+            Console.WriteLine("PATH: " + Path);
+            
+            Properties.Settings.Default.Timer = (int)numericUpDown1.Value;
+            Properties.Settings.Default.URL = textBox_url.Text;
+            
+            Properties.Settings.Default.Save();
         }
         private void UpdateRunning()
         {
@@ -97,5 +116,14 @@ namespace HTTPToText
             }
         }
 
+        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        {
+            UpdateSettings();
+        }
+
+        private void textBox_url_TextChanged(object sender, EventArgs e)
+        {
+            UpdateSettings();
+        }
     }
 }

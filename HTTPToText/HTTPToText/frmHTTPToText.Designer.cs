@@ -75,6 +75,7 @@
             0,
             0,
             0});
+            this.numericUpDown1.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
             // 
             // button_file
             // 
@@ -92,6 +93,7 @@
             this.textBox_url.Name = "textBox_url";
             this.textBox_url.Size = new System.Drawing.Size(602, 20);
             this.textBox_url.TabIndex = 3;
+            this.textBox_url.TextChanged += new System.EventHandler(this.textBox_url_TextChanged);
             // 
             // lblPath
             // 
@@ -120,7 +122,7 @@
             this.label1.TabIndex = 6;
             this.label1.Text = "Refresh (s)";
             // 
-            // Form1
+            // frmHTTPToText
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -132,7 +134,7 @@
             this.Controls.Add(this.button_file);
             this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.button_timer);
-            this.Name = "Form1";
+            this.Name = "frmHTTPToText";
             this.Text = "HTTP To Text";
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
