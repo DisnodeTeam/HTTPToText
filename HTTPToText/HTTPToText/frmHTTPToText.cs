@@ -17,5 +17,9 @@ namespace HTTPToText {
         private void button_file_Click(object sender, EventArgs e) {
             sfd.ShowDialog();
         }
+
+        private void sfd_FileOk(object sender, CancelEventArgs e) {
+            lblPath.Text = sfd.FileName;
+        }
     }
 }

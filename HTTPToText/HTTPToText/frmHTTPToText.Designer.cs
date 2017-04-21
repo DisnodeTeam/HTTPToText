@@ -33,11 +33,16 @@
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.button_file = new System.Windows.Forms.Button();
             this.textBox_url = new System.Windows.Forms.TextBox();
-            this.label_textfilepath = new System.Windows.Forms.Label();
+            this.lblPath = new System.Windows.Forms.Label();
             this.URL = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // sfd
+            // 
+            this.sfd.DefaultExt = "txt";
+            this.sfd.FileOk += new System.ComponentModel.CancelEventHandler(this.sfd_FileOk);
             // 
             // button_timer
             // 
@@ -72,14 +77,14 @@
             this.textBox_url.Size = new System.Drawing.Size(602, 20);
             this.textBox_url.TabIndex = 3;
             // 
-            // label_textfilepath
+            // lblPath
             // 
-            this.label_textfilepath.AutoSize = true;
-            this.label_textfilepath.Location = new System.Drawing.Point(312, 44);
-            this.label_textfilepath.Name = "label_textfilepath";
-            this.label_textfilepath.Size = new System.Drawing.Size(35, 13);
-            this.label_textfilepath.TabIndex = 4;
-            this.label_textfilepath.Text = "label1";
+            this.lblPath.AutoSize = true;
+            this.lblPath.Location = new System.Drawing.Point(290, 46);
+            this.lblPath.Name = "lblPath";
+            this.lblPath.Size = new System.Drawing.Size(66, 13);
+            this.lblPath.TabIndex = 4;
+            this.lblPath.Text = "(no path yet)";
             // 
             // URL
             // 
@@ -106,7 +111,7 @@
             this.ClientSize = new System.Drawing.Size(661, 79);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.URL);
-            this.Controls.Add(this.label_textfilepath);
+            this.Controls.Add(this.lblPath);
             this.Controls.Add(this.textBox_url);
             this.Controls.Add(this.button_file);
             this.Controls.Add(this.numericUpDown1);
@@ -126,7 +131,7 @@
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.Button button_file;
         private System.Windows.Forms.TextBox textBox_url;
-        private System.Windows.Forms.Label label_textfilepath;
+        private System.Windows.Forms.Label lblPath;
         private System.Windows.Forms.Label URL;
         private System.Windows.Forms.Label label1;
     }
