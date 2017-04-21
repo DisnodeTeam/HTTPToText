@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.sfd = new System.Windows.Forms.SaveFileDialog();
             this.button_timer = new System.Windows.Forms.Button();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.button_file = new System.Windows.Forms.Button();
@@ -121,7 +121,7 @@
 
         #endregion
 
-        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.SaveFileDialog sfd;
         private System.Windows.Forms.Button button_timer;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.Button button_file;

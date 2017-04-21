@@ -15,7 +15,7 @@ namespace HTTPToText {
         }
 
         private void button_file_Click(object sender, EventArgs e) {
-            saveFileDialog1.ShowDialog();
+            sfd.ShowDialog();
         }
     }
 }
