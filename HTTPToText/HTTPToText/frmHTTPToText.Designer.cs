@@ -1,6 +1,6 @@
 ﻿namespace HTTPToText
 {
-    partial class Form1
+    partial class frmHTTPToText
     {
         /// <summary>
         /// Required designer variable.
@@ -47,7 +47,6 @@
             this.button_timer.TabIndex = 0;
             this.button_timer.Text = "Start";
             this.button_timer.UseVisualStyleBackColor = true;
-            this.button_timer.Click += new System.EventHandler(this.button1_Click);
             // 
             // numericUpDown1
             // 
@@ -100,7 +99,7 @@
             this.label1.TabIndex = 6;
             this.label1.Text = "Refresh";
             // 
-            // Form1
+            // frmHTTPToText
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -112,8 +111,8 @@
             this.Controls.Add(this.button_file);
             this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.button_timer);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "frmHTTPToText";
+            this.Text = "HTTP To Text";
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
