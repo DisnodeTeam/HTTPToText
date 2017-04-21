@@ -16,6 +16,24 @@ namespace HTTPToText
         private Timer timer;
         private bool Running = false;
         private string Path = "";
+        private string URL = "";
+
+        public frmHTTPToText()
+        {
+            InitializeComponent();
+
+        }
+
+        private void frmHTTPToText_Load(object sender, EventArgs e)
+        {
+            Path = Properties.Settings.Default.FilePath;
+            URL = Properties.Settings.Default.URL;
+            numericUpDown1.Value = Properties.Settings.Default.Timer;
+
+            lblPath.Text = Path;
+            textBox_url.Text = URL;
+        }
+
         public void InitTimer()
         {
             
@@ -33,16 +51,8 @@ namespace HTTPToText
             timer = null;
         }
 
-        public frmHTTPToText()
-        {
-            InitializeComponent();
-            numericUpDown1.Value = Properties.Settings.Default.Timer;
-            Path = Properties.Settings.Default.FilePath;
-            Console.WriteLine(Properties.Settings.Default.FilePath);
-            textBox_url.Text = Properties.Settings.Default.URL;
-            lblPath.Text = Path;
-
-        }
+        
+       
         private void timer_tick(object sender, EventArgs e)
         {
            
@@ -52,6 +62,7 @@ namespace HTTPToText
                 System.Net.WebClient wc = new System.Net.WebClient();
                 string webData = wc.DownloadString(textBox_url.Text);
                 Console.WriteLine(webData);
+                System.IO.File.WriteAllText(Path, webData);
             }
             catch (Exception ex) {
             }
@@ -79,16 +90,16 @@ namespace HTTPToText
 
         private void sfd_FileOk(object sender, CancelEventArgs e)
         {
-            lblPath.Text = sfd.FileName;
+            
             Path = sfd.FileName;
-            Properties.Settings.Default.FilePath = Path;
-            Properties.Settings.Default.Save();
+            lblPath.Text = Path;
+
             UpdateSettings();
         }
         private void UpdateSettings()
         {
-            Console.WriteLine("PATH: " + Path);
-            
+
+            Properties.Settings.Default.FilePath = Path;
             Properties.Settings.Default.Timer = (int)numericUpDown1.Value;
             Properties.Settings.Default.URL = textBox_url.Text;
             
@@ -125,5 +136,7 @@ namespace HTTPToText
         {
             UpdateSettings();
         }
+
+       
     }
 }
